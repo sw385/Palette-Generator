@@ -104,6 +104,12 @@ def process_dir(directory):
 
 
 if __name__ == "__main__":
+    if not os.path.exists(INPUT_DIR):
+        os.makedirs(INPUT_DIR)
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+
+
     input_dirs = dirs_to_process()
     for dir in input_dirs:
         input_images = images_to_process(dir)
